@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="english">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शांभवी बहुउद्देशीय संस्था
+    </title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- font 2  -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: content-box;
+            font-family: "Poppins", sans-serif;
+
+        }
+
+        /* logo styling */
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: black;
+            max-width: 400px;
+        }
+
+        .navbar-brand img {
+            width: 72px;
+            height: 72px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+            background-color: white;
+        }
+
+        .navbar-brand .text-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .navbar-brand h2 {
+            margin: 0;
+            line-height: 1.2;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand h2:first-of-type {
+            font-size: 1.8rem;
+        }
+
+        /* navbar styling */
+        .navbar {
+            background-color: #73946B;
+            padding: 10px 20px;
+            border-bottom: 1px solid black;
+        }
+
+        .navbar-brand img {
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+        }
+
+        .navbar-nav {
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: #000000;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .nav-link:hover {
+            color: #FFFDF6;
+        }
+
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .marquee-text {
+            display: inline-block;
+            white-space: nowrap;
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #007bff;
+            padding: 10px 0;
+        }
+
+        .marquee-text:hover {
+            color: #73946B;
+        }
+
+        .carousel-item {
+            height: 700px;
+            width: 100%;
+            /* Full screen height */
+        }
+
+        .carousel-item img {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            object-fit: cover;
+            /* Ensures image fills and crops if needed */
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(253, 254, 255, 0.8);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: rgba(0, 123, 255, 1);
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-size: 70% 70%;
+            filter: invert(1);
+            /* Make arrows white */
+        }
+
+        /* .container {
+            max-width: 100%;
+            --bs-gutter-x: 0;
+        } */
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-icon {
+            font-size: 2.5rem;
+            color: #0d6efd;
+            /* Bootstrap primary color */
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .about-heading {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .contact-heading {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.5rem;
+            gap: 0.75rem;
+            /* Bootstrap primary */
+        }
+
+        .contact-heading .icon {
+            font-size: 2.8rem;
+        }
+
+        .contact-section {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            color: #0d6efd;
+            margin-right: 15px;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .map-container {
+            height: 350px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        @media (max-width: 575.98px) {
+            .contact-section {
+                padding: 20px 15px;
+            }
+        }
+
+        .font-devanagari {
+            font-family: 'Noto Sans Devanagari', 'Mangal', 'Kokila', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg w-100">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand " href="#">
+                <img src="../images/logo.jpg" alt="Logo">
+                <div class="text-container">
+                    <h2 class="font-devanagari">शांभवी</h2>
+                    <h2 class="font-devanagari">बहुउद्देशीय संस्था</h2>
+                </div>
+            </a>
+
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible nav items -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav flex-lg-row">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="marquee-container" id="Home">
+        <marquee class="marquee-text" scrollamount="10">
+            शांभवी बहुउद्देशीय संस्था
+        </marquee>
+    </div>
+
+    <div class="container mw-100">
+        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/education.jpg" class="d-block w-100" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/plantation.jpg" class="d-block w-100" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/blooddonation.jpg" class="d-block w-100" alt="Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/food do.jpg" class="d-block w-100" alt="Image 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/womens trainings.jpg" class="d-block w-100" alt="Image 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/education2.jpg" class="d-block w-100" alt="Image 6">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/ambulance.jpg" class="d-block w-100" alt="Image 7">
+                </div>
+            </div>
+
+            <!-- Prev/Next controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- About Section -->
+
+    <div class="container my-5 ms-3 mw-100" id="about us">
+        <!-- Text Section -->
+        <h2 class="about-heading">
+            <i class="bi bi-info-circle about-icon" aria-hidden="true"></i>
+            About Us
+        </h2>
+        <p class="lead">
+            shambhvi Bahuuddesiy Sanstha is a non-profit organization dedicated to uplifting individuals and communities
+            in
+            need. Through programs focused on education, healthcare, plantation, blood donation, Women's Training,
+            Ambulance Service and other, the
+            foundation works to create lasting positive change. Driven by compassion and community partnerships,
+            shambhvi Bahuuddesiy Sanstha strives to empower lives, restore hope, and build a more inclusive and
+            supportive society
+            for all.
+        </p>
+    </div>
+    </div>
+    </div>
+
+    <!-- Card Container -->
+    <h2 class="text-center mb-4" id="services">Our Services</h2>
+    <div class="container ms-2 my-2 mw-100">
+        <div class="row g-3 justify-content-center " id="card-container">
+            <!-- Initial 4 Cards -->
+            <!-- card one -->
+            <div class="col-10 col-sm-6 col-md-3 ">
+                <div class="card h-100 align-items-center">
+                    <img src="./images/education icon.jpg" class="card-img-top h-50 w-50" alt=" Card 1" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Donate for Education - Empower a Future</h5>
+                        <p class="card-text flex-grow-1">Your donation can help a child access quality education, school
+                            supplies, and a brighter future. </p>
+                        <a href="#" class="btn btn-primary mt-auto">Donate</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-3">
+                <div class="card h-100 align-items-center">
+                    <img src="./images/plantation icon.jpg" class="card-img-top h-50 w-50" alt="Card 2" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Donate for Plantation - Grow a Greener Future</h5>
+                        <p class="card-text flex-grow-1">Your donation helps us plant trees, restore green spaces, and
+                            fight climate change. Every tree planted contributes to cleaner air, richer biodiversity,
+                            and a healthier planet.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Donate</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-3">
+                <div class="card h-100 align-items-center">
+                    <img src="./images/blood icon.jpg" class="card-img-top h-50 w-50" alt="Card 3" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Support Our Blood Donation Camp - Give the Gift of Life</h5>
+                        <p class="card-text flex-grow-1">Join us in making our upcoming Blood Donation Camp a success.
+                            Your donations help us organize the event, provide necessary medical supplies, and reach
+                            more donors.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Donate</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden cards to show on button click -->
+            <div id="more-cards" class="row g-4 justify-content-center" style="display: none; width: 100%;">
+                <div class="col-10 col-sm-6 col-md-3">
+                    <div class="card h-100 align-items-center">
+                        <img src="./images/ambulance icon.jpg" class="card-img-top w-50 h-50" alt="Card 5" />
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Donate for Ambulance - Be a Lifeline in Emergencies</h5>
+                            <p class="card-text flex-grow-1">Your contribution can help us provide a fully equipped
+                                ambulance to serve those in urgent need. With your support we can ensure timely medical
+                                aid, faster emergency response, and save more lives.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Donate</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10 col-sm-6 col-md-3">
+                    <div class="card h-100 align-items-center">
+                        <img src="./images/women training.jpg" class="card-img-top h-50 w-50" alt="Card 6" />
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Donate for Women's Training - Empower Her Future</h5>
+                            <p class="card-text flex-grow-1">Your support helps provide skills, education, and
+                                opportunities to women seeking to build a better life. Through training programs, we
+                                equips women with the tools they need to achieve financial independence and confidence.
+                            </p>
+                            <a href="#" class="btn btn-primary mt-auto">Donate</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10 col-sm-6 col-md-3">
+                    <div class="card h-100 align-items-center">
+                        <img src="./images/food icon.jpg" class="card-img-top h-50 w-50" alt="Card 7" />
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Donate for Food - Feed a Hungry Soul</h5>
+                            <p class="card-text flex-grow-1">Millions go to bed hungry every day. Your donation helps to
+                                provide meals to families, children, and the elderly in need. Together, we can fight
+                                hunger and bring hope to every plate.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Donate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button class="btn btn-outline-primary" id="toggle-button">Show More</button>
+        </div>
+    </div>
+
+    <!-- contact info -->
+    <div class="container my-4 ">
+        <h2 class="contact-heading justify-content-center">
+            <i class="bi bi-telephone-fill icon" aria-hidden="true"></i>
+            Contact Us
+        </h2>
+    </div>
+    <div class="container my-5" id="contact">
+        <div class="contact-section">
+            <div class="row g-4  justify-content-center">
+                <!-- Contact Info Column -->
+                <div class="col-12 col-sm-6">
+                    <div class="contact-item">
+                        <i class="bi bi-geo-alt contact-icon"></i>
+                        <div>
+                            <strong>Address:</strong><br />
+                            At.Mansar Tah. Ramtek Dist. Nagpur - 441106
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-envelope contact-icon"></i>
+                        <div>
+                            <strong>Email:</strong><br />
+                            shambhavibahuudesiasanstha@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-telephone contact-icon"></i>
+                        <div>
+                            <strong>Phone No:</strong><br />
+                            9823947741 - 9119417768
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-instagram contact-icon"></i>
+                        <div>
+                            <strong>Instagram:</strong><br />
+                            <a href="https://www.instagram.com/shambhavi012025?igsh=d2hqMHRqcGMxeDlk" target="_blank"
+                                rel="https://www.instagram.com/shambhavi012025?igsh=d2hqMHRqcGMxeDlk">@shambhvi012025</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-facebook contact-icon"></i>
+                        <div>
+                            <strong>Facebook:</strong><br />
+                            <a href="https://www.facebook.com/profile.php?id=61576009967849" target="_blank"
+                                rel="https://www.facebook.com/profile.php?id=61576009967849">Shambhavi Bahuuddesiy
+                                Sanstha</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map Column -->
+                <div class="col-12 col-sm-5">
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7062.068709471396!2d79.25945494147516!3d21.396139871386595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4d13f25516b0b%3A0x527c7db0b85c5cbc!2sMansar%2C%20Maharashtra%20441401!5e1!3m2!1sen!2sin!4v1748167532113!5m2!1sen!2sin"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggleButton = document.getElementById('toggle-button');
+        const moreCards = document.getElementById('more-cards');
+
+        toggleButton.addEventListener('click', () => {
+            if (moreCards.style.display === 'none' || moreCards.style.display === '') {
+                moreCards.style.display = 'flex';
+                toggleButton.textContent = 'Show Less';
+            } else {
+                moreCards.style.display = 'none';
+                toggleButton.textContent = 'Show More';
+                // Scroll back to top of cards container for better UX on hide
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+        window.onload = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+
+</body>
+
+</html>
